@@ -1,0 +1,158 @@
+#navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #263238;
+    color: #fff;
+    z-index: 1000;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-decoration: none;
+    cursor: default;
+}
+
+.navbar-logo:hover,
+.navbar-logo:focus,
+.navbar-logo:active {
+    outline: none;
+    opacity: 1;
+}
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.navbar-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 0.75rem;
+    transition: all 0.1s ease;
+}
+
+.navbar-link:hover {
+    opacity: .8;
+}
+
+.navbar-link:active,
+.navbar-link:focus {
+    outline: none;
+}
+
+.navbar-link:focus {
+    opacity: .6;
+}
+
+.navbar-link.active {
+    transition: all 0.1s ease;
+    font-weight: bold;
+    /* color: #1e88e5; */
+}
+
+.navbar-link.active:hover,
+.navbar-link.active:focus {
+    opacity: 1;
+    cursor: default;
+}
+
+.burger-button {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 1.2rem;
+    padding: .1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-left: auto;
+    transition: all .1s linear;
+}
+
+.burger-line {
+    width: 100%;
+    height: .2rem;
+    background-color: white;
+    border-radius: .2rem;
+}
+
+@media (max-width: 1199px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navbar-menu {
+        flex-direction: column;
+        text-align: center;
+        gap: 0em;
+        width: 100%;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.3s ease;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-menu.open {
+        max-height: 500px;
+    }
+
+    .navbar-item {
+        margin: 0.25rem 0;
+    }
+
+    .burger-button {
+        display: flex;
+    }
+}
+
+@media (max-width: 800px) {
+    .navbar-logo {
+        font-size: 1.2rem;
+    }
+
+    .navbar-link {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .navbar-container {
+        padding: 0.3rem 0.5rem;
+    }
+
+    .navbar-link {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.4rem;
+    }
+
+    .content {
+        padding: 0.5rem;
+    }
+}
